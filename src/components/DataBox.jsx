@@ -6,7 +6,7 @@ import FoodIcon from '@material-ui/icons/Restaurant';
 export const DataBoxContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 0 48px 24px 48px;
+  margin: 0 6% 24px 6%;
   background-color: transparent;
   border: 1px solid #ccc;
   border-radius: 5px;
