@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PremiumIcon from '@material-ui/icons/MonetizationOn';
 import DataBox from './DataBox';
+import GeneralExpenses from './GeneralExpenses';
 
 const PersonalInfo = styled.div`
   margin: 0 6% 24px 6%;
@@ -62,11 +63,14 @@ export const Profile = () => (
         <SmallTextDiv>Colocar avisos aqui</SmallTextDiv>
       </Section>
     </PersonalInfo>
+    <GeneralExpenses />
     <DataBox type="Alimentação"/>
     <DataBox type="Assinatura e serviços"/>
     <DataBox type="Educação"/>
     <DataBox type="Saúde"/>
     <DataBox type="Roupas"/>
-    <DataBox type="Viagem"/>
+    <DataBox type="Transporte"/>
+    <DataBox type="Saques"/>
+    <DataBox type="Outros"/>
   </div>
 );
