@@ -20,10 +20,14 @@ const data = [
   { name: 'Educação', value: 300 },
   { name: 'Saúde', value: 200 },
   { name: 'Roupas', value: 100 },
-  { name: 'Viagem', value: 100 },
+  { name: 'Transporte', value: 250 },
+  { name: 'Saques', value: 100 },
+  { name: 'Outros', value: 100 },
 ];
   
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#DC143C', '#A122BD'];
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#DC143C', '#A122BD', '#CA45F2', '#A1B1C2'];
+
+const w = window.innerWidth;
   
 const GeneralExpenses = () => {
 
@@ -31,12 +35,12 @@ return (
     <DataBoxContainer>
         <DataBoxHeader>
             <div style={{ margin: '0 5px 0 5px' }}>
-            <AccountBalanceIcon color="primary"/>
+            
             </div>
             <DataBoxName> Despesas gerais </DataBoxName>
         </DataBoxHeader>
         <DataBoxBody>
-        <PieChart width={500} height={300}>
+        <PieChart width={/*w/2*/500} height={300}>
             <Pie data={data} cx="50%" cy="50%" outerRadius={80} label>
                 {
                 data.map((entry, index) => (

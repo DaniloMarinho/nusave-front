@@ -10,7 +10,9 @@ const PersonalInfo = styled.div`
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 3px 0;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.10);
+  background-color: white;
+  color: #404040;
 `;
 
 const UpperSection = styled.div`
@@ -43,7 +45,7 @@ const StyledPremiumIcon = styled(PremiumIcon)`
 `;
 
 const Badges = styled.div`
-  width: 320px;
+  width: 120px;
   font-size: 32px;
   padding: 4px;
 `;
@@ -54,7 +56,7 @@ export const Profile = () => (
       <UpperSection>
         <StyledPremiumIcon color="secondary" />
         <BigTextDiv>3128</BigTextDiv>
-        <Badges>emblemas aqui</Badges>
+        <Badges>embl.</Badges>
       </UpperSection>
       <Section>
         <SmallTextDiv>Nível 3</SmallTextDiv>
@@ -64,13 +66,13 @@ export const Profile = () => (
       </Section>
     </PersonalInfo>
     <GeneralExpenses />
+    <DataBox type="Saques"/>
     <DataBox type="Alimentação"/>
+    <DataBox type="Transporte"/>
+    <DataBox type="Saúde"/>
     <DataBox type="Assinatura e serviços"/>
     <DataBox type="Educação"/>
-    <DataBox type="Saúde"/>
     <DataBox type="Roupas"/>
-    <DataBox type="Transporte"/>
-    <DataBox type="Saques"/>
     <DataBox type="Outros"/>
   </div>
 );

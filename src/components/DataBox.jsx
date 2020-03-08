@@ -16,7 +16,8 @@ export const DataBoxContainer = styled.div`
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 4px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.10);
+  background-color: white;
 `;
 
 export const DataBoxHeader = styled.div`
@@ -34,30 +35,45 @@ export const DataBoxName = styled.div`
   width: 100%;
   margin: 4px 0 0 4px;
   font-weight: bold;
+  font-size: 18px;
+  font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", sans-serif;
+  color: #404040;
 `;
 
-export const ShowMoreButton = styled(Button)`
+/*export const ShowMoreButton = styled(Button)`
   text-align: center;
   font-size: 14px;
+  border: 1px solid #81259D;
   height: 24px;
   width: 150px;
   padding: 1px;
   margin-right: 15px;
+`;*/
+
+export const ShowMoreButton = styled.button`
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #81259D;
+  border-radius: 7px;
+  height: 24px;
+  width: 110px;
+  padding: 1px;
+  margin-right: 15px;
+  color: #81259D;
+  background-color: white;
+  cursor: pointer;
+  outline: none;
+  &:hover {
+    color: white;
+    background-color: #81259D;
+  }
 `;
 
 const data = [
-  {
-    name: '200-500', uv: 4000,
-  },
-  {
-    name: '500-700', uv: 3000,
-  },
-  {
-    name: '700-900', uv: 2000,
-  },
-  {
-    name: '>900', uv: 2780,
-  },
+  { name: '200-500', value: 4000 },
+  { name: '500-700', value: 3000 },
+  { name: '700-900', value: 2000 },
+  { name: '>900', value: 2780 },
 ];
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
@@ -68,16 +84,12 @@ const ClosedDataBox = ({type, onOpen}) => {
       <DataBoxContainer>
       <DataBoxHeader>
           <div style={{ margin: '0 5px 0 5px' }}>
-            <FoodIcon color="primary"/>
+            
           </div>
           <DataBoxName> {type} </DataBoxName>
           <ShowMoreButton color="primary" onClick={()=>onOpen()} >Mostrar mais</ShowMoreButton>
       </DataBoxHeader>
-      <DataBoxBody>
-          <div>
-            closed
-          </div>
-      </DataBoxBody>
+      <DataBoxBody />
       </DataBoxContainer>
     );
   };
@@ -88,17 +100,17 @@ const OpenDataBox = ({type, onClose}) => {
     <DataBoxContainer>
     <DataBoxHeader>
         <div style={{ margin: '0 5px 0 5px' }}>
-          <FoodIcon color="primary"/>
+          
         </div>
         <DataBoxName> {type} </DataBoxName>
         <ShowMoreButton color="primary" onClick={()=>onClose()} >Ocultar</ShowMoreButton>
     </DataBoxHeader>
     <DataBoxBody>
       <BarChart width={200} height={200} data={data}>
-        <Bar dataKey="uv" >
+        <Bar dataKey='value' >
           {
             data.map((entry, index) => (
-              <Cell fill={COLORS[index]} key={`cell-${index}`} />
+              <Cell key={`cell-${index}`} fill={COLORS[index]} label/>
             ))
           }
         </Bar>

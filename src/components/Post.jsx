@@ -9,7 +9,7 @@ const PostContainer = styled.div`
 `;
 
 const PostTextContainer = styled.div`
-  background-color: transparent;
+  background-color: white;
   border: 1px solid #ccc;
   padding: 3px 0;
   padding: 8px;

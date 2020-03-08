@@ -95,7 +95,7 @@ export default function PersistentDrawerLeft() {
   };
 
   return (
-    <div className={classes.root}>
+    <div style={{backgroundColor:'#F0F0F0'}} className={classes.root}>
       <CssBaseline />
       <AppBar
         position="fixed"
@@ -114,7 +114,7 @@ export default function PersistentDrawerLeft() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            NuSave
+            <img src="NuSave_White_logo.png" width="84.5" height="36" style={{marginTop:'8px'}}/>
           </Typography>
         </Toolbar>
       </AppBar>
