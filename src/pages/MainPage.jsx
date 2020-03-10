@@ -15,9 +15,13 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
 import PersonIcon from '@material-ui/icons/Person';
 import FeedIcon from '@material-ui/icons/Notifications';
+import DataIcon from '@material-ui/icons/PieChart';
+import PresentationIcon from '@material-ui/icons/Bookmark';
 
 import Profile from '../containers/Profile';
 import Feed from '../containers/Feed';
+import Data from '../containers/Data';
+import Presentation from '../containers/Presentation';
 
 import { ListLink } from '../components/Link';
 
@@ -133,8 +137,10 @@ export default function PersistentDrawerLeft() {
           </IconButton>
         </div>
         <List>
+          <ListLink to={routes.PRESENTATION} primary="Apresentação" icon={<PresentationIcon color="primary"/>} />
           <ListLink to={routes.PROFILE} primary="Perfil" icon={<PersonIcon color="primary"/>} />
           <ListLink to={routes.FEED} primary="Feed" icon={<FeedIcon color="primary"/>} />
+          <ListLink to={routes.DATA} primary="Inserir dados" icon={<DataIcon color="primary"/>} />
         </List>
       </Drawer>
       <main
@@ -144,8 +150,10 @@ export default function PersistentDrawerLeft() {
       >
         <div className={classes.drawerHeader} />
         <Switch>
+          <Route exact path={routes.PRESENTATION} component={Presentation} />
           <Route exact path={routes.PROFILE} component={Profile} />
           <Route exact path={routes.FEED} component={Feed} />
+          <Route exact path={routes.DATA} component={Data} />
           <Route path="/">
             <Redirect to={routes.PROFILE} />
           </Route>

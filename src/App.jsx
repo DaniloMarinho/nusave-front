@@ -27,8 +27,10 @@ const App = () => (
   <MuiThemeProvider theme = { theme }>
     <BrowserRouter>
       <Switch>
+        <Route path={routes.PRESENTATION} component={MainPage} />
         <Route path={routes.PROFILE} component={MainPage} />
         <Route path={routes.FEED} component={MainPage} />
+        <Route path={routes.DATA} component={MainPage} />
         <Route path="/">
           <Redirect to={routes.PROFILE} />
         </Route>

@@ -72,7 +72,7 @@ export const Profile = () => (
     <DataBox type="Saúde"/>
     <DataBox type="Assinatura e serviços"/>
     <DataBox type="Educação"/>
-    <DataBox type="Roupas"/>
+    <DataBox type="Cuidados pessoais"/>
     <DataBox type="Outros"/>
   </div>
 );

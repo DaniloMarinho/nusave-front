@@ -10,16 +10,12 @@ import{
   DataBoxContainer, DataBoxHeader, DataBoxBody, DataBoxName
 } from './DataBox';
 
-const Chart = styled(PieChart)`
-  width: 100%;
-`;
-
 const data = [
   { name: 'Alimentação', value: 400 },
   { name: 'Assinatura e serviços', value: 300 },
   { name: 'Educação', value: 300 },
   { name: 'Saúde', value: 200 },
-  { name: 'Roupas', value: 100 },
+  { name: 'Cuidados pessoais', value: 100 },
   { name: 'Transporte', value: 250 },
   { name: 'Saques', value: 100 },
   { name: 'Outros', value: 100 },
