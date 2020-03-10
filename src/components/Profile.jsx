@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import PremiumIcon from '@material-ui/icons/MonetizationOn';
-import DataBox from './DataBox';
-import GeneralExpenses from './GeneralExpenses';
 
 const PersonalInfo = styled.div`
   margin: 0 6% 24px 6%;
@@ -18,6 +16,7 @@ const PersonalInfo = styled.div`
 const UpperSection = styled.div`
   display: flex;
   margin: 6px 12px 6px 12px;
+  padding: 0 0 4px 0;
   border-bottom: 1px solid #ccc;
 `;
 
@@ -26,9 +25,15 @@ const Section = styled.div`
   margin: 6px 12px 6px 12px;
 `;
 
+const ImageDiv = styled.div`
+  width: 80px;
+  height: 80px;
+  margin-right: 18px;
+`;
+
 const BigTextDiv = styled.div`
   width: 100%;
-  font-size: 32px;
+  font-size: 56px;
   padding: 4px;
 `;
 
@@ -54,7 +59,7 @@ export const Profile = () => (
   <div>
     <PersonalInfo>
       <UpperSection>
-        <StyledPremiumIcon color="secondary" />
+        <ImageDiv><img src="coin low resolution.png" /></ImageDiv>
         <BigTextDiv>3128</BigTextDiv>
         <Badges>embl.</Badges>
       </UpperSection>
@@ -65,14 +70,5 @@ export const Profile = () => (
         <SmallTextDiv>Colocar avisos aqui</SmallTextDiv>
       </Section>
     </PersonalInfo>
-    <GeneralExpenses />
-    <DataBox type="Saques"/>
-    <DataBox type="Alimentação"/>
-    <DataBox type="Transporte"/>
-    <DataBox type="Saúde"/>
-    <DataBox type="Assinatura e serviços"/>
-    <DataBox type="Educação"/>
-    <DataBox type="Cuidados pessoais"/>
-    <DataBox type="Outros"/>
   </div>
 );

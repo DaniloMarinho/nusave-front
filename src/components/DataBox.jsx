@@ -2,8 +2,6 @@ import React, { useState, useEffect, PureComponent } from 'react';
 import styled from 'styled-components';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
-import Button from '@material-ui/core/Button';
-import FoodIcon from '@material-ui/icons/Restaurant';
 
 import {
   BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
@@ -132,6 +130,10 @@ const ClosedDataBox = ({type, onOpen}) => {
 };
 
 const OpenDataBox = ({type, onClose}) => {
+  const [financialClass, setFinancialClass] = useState("A");
+  const [region, setRegion] = useState("SP");
+  const [age, setAge] = useState("18-30");
+  const [sex, setSex] = useState("Masculino");
 
   return (
     <DataBoxContainer>
@@ -164,7 +166,8 @@ const OpenDataBox = ({type, onClose}) => {
       </BarChart>
       <FilterDiv>
         <SelectDiv>
-          <Select color="#1589FF" label="Classe econômica" value="A">
+          <Select color="secondary" label="Classe econômica" value={financialClass} 
+            onChange={event => setFinancialClass(event.target.value)}>
             <MenuItem value="A">A</MenuItem>
             <MenuItem value="B">B</MenuItem>
             <MenuItem value="C">C</MenuItem>
@@ -172,7 +175,8 @@ const OpenDataBox = ({type, onClose}) => {
           </Select>
         </SelectDiv>
         <SelectDiv>
-          <Select label="Localização" value="SP">
+          <Select color="secondary" label="Localização" value={region}
+            onChange={event => setRegion(event.target.value)}>
             <MenuItem value="SP">SP</MenuItem>
             <MenuItem value="RJ">RJ</MenuItem>
             <MenuItem value="BH">BH</MenuItem>
@@ -180,7 +184,8 @@ const OpenDataBox = ({type, onClose}) => {
           </Select>
         </SelectDiv>
         <SelectDiv>
-          <Select label="Faixa etária" value="18-30">
+          <Select color="secondary" label="Faixa etária" value={age}
+            onChange={event => setAge(event.target.value)}>
             <MenuItem value="18-30">18-30</MenuItem>
             <MenuItem value="30-40">30-40</MenuItem>
             <MenuItem value="40-50">40-50</MenuItem>
@@ -188,7 +193,8 @@ const OpenDataBox = ({type, onClose}) => {
           </Select>
         </SelectDiv>
         <SelectDiv>
-          <Select label="Sexo" value="Masculino">
+          <Select color="secondary" label="Sexo" value={sex}
+            onChange={event => setSex(event.target.value)}>
             <MenuItem value="Masculino">Masculino</MenuItem>
             <MenuItem value="Feminino">Feminino</MenuItem>
           </Select>

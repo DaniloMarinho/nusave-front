@@ -13,15 +13,19 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
+import PresentationIcon from '@material-ui/icons/Bookmark';
 import PersonIcon from '@material-ui/icons/Person';
+import AdvisesIcon from '@material-ui/icons/AddAlert';
+import StatisticsIcon from '@material-ui/icons/ShowChart';
 import FeedIcon from '@material-ui/icons/Notifications';
 import DataIcon from '@material-ui/icons/PieChart';
-import PresentationIcon from '@material-ui/icons/Bookmark';
 
+import Presentation from '../containers/Presentation';
 import Profile from '../containers/Profile';
+import Advises from '../containers/Advises';
+import Statistics from '../containers/statistics';
 import Feed from '../containers/Feed';
 import Data from '../containers/Data';
-import Presentation from '../containers/Presentation';
 
 import { ListLink } from '../components/Link';
 
@@ -118,7 +122,7 @@ export default function PersistentDrawerLeft() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            <img src="NuSave_White_logo.png" width="84.5" height="36" style={{marginTop:'8px'}}/>
+            <img src="NuSave_white_small.png" style={{marginTop:'8px'}}/>
           </Typography>
         </Toolbar>
       </AppBar>
@@ -139,6 +143,8 @@ export default function PersistentDrawerLeft() {
         <List>
           <ListLink to={routes.PRESENTATION} primary="Apresentação" icon={<PresentationIcon color="primary"/>} />
           <ListLink to={routes.PROFILE} primary="Perfil" icon={<PersonIcon color="primary"/>} />
+          <ListLink to={routes.ADVISES} primary="Notificações" icon={<AdvisesIcon color="primary"/>} />
+          <ListLink to={routes.STATISTICS} primary="Meus gastos" icon={<StatisticsIcon color="primary"/>} />
           <ListLink to={routes.FEED} primary="Feed" icon={<FeedIcon color="primary"/>} />
           <ListLink to={routes.DATA} primary="Inserir dados" icon={<DataIcon color="primary"/>} />
         </List>
@@ -152,6 +158,8 @@ export default function PersistentDrawerLeft() {
         <Switch>
           <Route exact path={routes.PRESENTATION} component={Presentation} />
           <Route exact path={routes.PROFILE} component={Profile} />
+          <Route exact path={routes.ADVISES} component={Advises} />
+          <Route exact path={routes.STATISTICS} component={Statistics} />
           <Route exact path={routes.FEED} component={Feed} />
           <Route exact path={routes.DATA} component={Data} />
           <Route path="/">

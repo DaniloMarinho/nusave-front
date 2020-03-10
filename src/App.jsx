@@ -14,7 +14,7 @@ const theme = createMuiTheme({
         dark: '#000'
      },
      secondary: {
-       main: '#f9a602',
+       main: '#1589FF',
      },
   },
   typography: {
@@ -31,6 +31,8 @@ const App = () => (
         <Route path={routes.PROFILE} component={MainPage} />
         <Route path={routes.FEED} component={MainPage} />
         <Route path={routes.DATA} component={MainPage} />
+        <Route path={routes.ADVISES} component={MainPage} />
+        <Route path={routes.STATISTICS} component={MainPage} />
         <Route path="/">
           <Redirect to={routes.PROFILE} />
         </Route>
