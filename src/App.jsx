@@ -5,6 +5,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import * as routes from './routes';
 
 import MainPage from './pages/MainPage';
+import LoginPage from './pages/Login';
 
 const theme = createMuiTheme({
   palette: {
@@ -27,6 +28,7 @@ const App = () => (
   <MuiThemeProvider theme = { theme }>
     <BrowserRouter>
       <Switch>
+        <Route path={routes.LOGIN} component={LoginPage} />
         <Route path={routes.PRESENTATION} component={MainPage} />
         <Route path={routes.PROFILE} component={MainPage} />
         <Route path={routes.FEED} component={MainPage} />
@@ -34,7 +36,7 @@ const App = () => (
         <Route path={routes.ADVISES} component={MainPage} />
         <Route path={routes.STATISTICS} component={MainPage} />
         <Route path="/">
-          <Redirect to={routes.PROFILE} />
+          <Redirect to={routes.LOGIN} />
         </Route>
       </Switch>
     </BrowserRouter>

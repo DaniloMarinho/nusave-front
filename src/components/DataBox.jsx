@@ -68,6 +68,25 @@ const ShowMoreButton = styled.button`
   }
 `;
 
+const SpendsButton = styled.button`
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #1589FF;
+  border-radius: 7px;
+  height: 24px;
+  width: 110px;
+  padding: 1px;
+  margin: 4px 15px 0 0;
+  color: #1589FF;
+  background-color: white;
+  cursor: pointer;
+  outline: none;
+  &:hover {
+    color: white;
+    background-color: #1589FF;
+  }
+`;
+
 const FilterDiv = styled.div`
   width: 100%;
   display: flex;
@@ -135,6 +154,10 @@ const OpenDataBox = ({type, onClose}) => {
   const [age, setAge] = useState("18-30");
   const [sex, setSex] = useState("Masculino");
 
+  function showTips(){
+    alert("-Quando for fazer as compras do mês, dê preferência a supermercados.\n-Consumidores que adquirem produtos em padarias, por exemplo, acabam gastando cerca de 30% a mais pelos mesmos alimentos.\n-Na escola, faça com que seus filhos comam alimentos de casa ao invés de comprar na lanchonete (você pode preparar um pão recheado com queijo e também cortar frutas, por exemplo). Você economizaria muito!\n-Congele as refeições que sobrarem e os alimentos em excesso na despensa. Deste modo, você preserva os alimentos e evita desperdícios.\n-Organize alimentos por data de validade na hora de guardá-los (deixando os alimentos com vencimento mais próximo à vista), para evitar que sejam esquecidos e desperdiçados no futuro.");
+  };
+
   return (
     <DataBoxContainer>
     <DataBoxHeader>
@@ -201,8 +224,9 @@ const OpenDataBox = ({type, onClose}) => {
         </SelectDiv>
       </FilterDiv>
     </DataBoxBody>
-    <div style={{margin:'12px 0 0 0', color:'#1589FF', width:'100%', textAlign:'center'}}>
+    <div style={{margin:'12px 0 6px 0', color:'#1589FF', width:'100%', textAlign:'center'}}>
       Abaixo serão adicionados dados e dicas sobre a forma como as pessoas gastam para economizar no setor</div>
+    <SpendsButton  onClick={() => showTips()} >Dicas de gasto</SpendsButton>
     </DataBoxContainer>
   );
 };
